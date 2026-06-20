@@ -1,0 +1,438 @@
+:root {
+  --ug-font: 'Scheherazade New', 'UKIJ Tuz Tom', serif;
+  --ui-font: 'Baloo 2', 'Scheherazade New', system-ui, sans-serif;
+  --bg-1: #fff7e6;
+  --bg-2: #e8f7ff;
+  --ink: #3a3a4a;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--ui-font);
+  color: var(--ink);
+  background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  background-attachment: fixed;
+}
+
+.app {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.screen {
+  width: 100%;
+  max-width: 720px;
+  padding: 24px 18px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: screen-in 0.35s ease;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- باش بەت ---------- */
+.home-header {
+  text-align: center;
+  margin: 8px 0 22px;
+}
+.home-title {
+  font-size: 2.6rem;
+  margin: 0;
+  color: #ff7a45;
+}
+.home-subtitle {
+  font-size: 1.25rem;
+  margin: 6px 0 0;
+  color: #5a8bb0;
+}
+
+.letter-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.letter-card {
+  border: none;
+  cursor: pointer;
+  border-radius: 26px;
+  padding: 18px 10px 12px;
+  background: var(--card-color, #ffd166);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.letter-card:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+.letter-card-char {
+  font-family: var(--ug-font);
+  font-size: 3.4rem;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.letter-card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  opacity: 0.95;
+}
+.letter-card-stars .star {
+  filter: grayscale(1) opacity(0.45);
+  font-size: 0.95rem;
+}
+.letter-card-stars .star.on {
+  filter: none;
+}
+
+/* ---------- دەرس بېتى ---------- */
+.lesson,
+.reward {
+  justify-content: center;
+  gap: 26px;
+  text-align: center;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #ff7a45;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.lesson-letter-box {
+  width: 220px;
+  height: 220px;
+  border-radius: 40px;
+  background: var(--card-color, #ffd166);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.12);
+  animation: pop 0.4s ease;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.lesson-letter-char {
+  font-family: var(--ug-font);
+  font-size: 8rem;
+  line-height: 0.9;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.lesson-letter-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.lesson-words {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.lesson-word {
+  background: #fff;
+  border-radius: 24px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.08);
+  min-width: 120px;
+}
+.lesson-word-emoji {
+  font-size: 3rem;
+}
+.lesson-word-text {
+  font-family: var(--ug-font);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+/* ---------- چوڭ تۈگمە ---------- */
+.big-btn {
+  border: none;
+  cursor: pointer;
+  font-family: var(--ui-font);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  background: #ff7a45;
+  padding: 16px 30px;
+  border-radius: 999px;
+  box-shadow: 0 6px 0 #d85f30;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.big-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d85f30;
+}
+.big-btn.ghost {
+  background: #fff;
+  color: #ff7a45;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- مەشىق ---------- */
+.exercise {
+  justify-content: flex-start;
+  gap: 26px;
+  padding-top: 36px;
+}
+.exercise-title {
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 6px 0;
+  color: #4a6fa5;
+}
+
+.prompt-card {
+  background: #fff;
+  border-radius: 32px;
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+}
+.prompt-emoji {
+  font-size: 5.5rem;
+}
+.prompt-word {
+  font-family: var(--ug-font);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.options-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.option-btn {
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+  background: #ffd166;
+  color: #fff;
+  font-family: var(--ug-font);
+  font-size: 3.2rem;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  transition: transform 0.12s ease;
+}
+.option-btn:active {
+  transform: translateY(4px);
+}
+.option-btn.correct {
+  background: #5bc97d;
+  animation: pop 0.4s ease;
+}
+.option-btn.wrong {
+  background: #ff7070;
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+/* ---------- ماسلاشتۇرۇش مەشىقى ---------- */
+.match-board {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.match-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.match-word,
+.match-emoji {
+  border: none;
+  cursor: pointer;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 0.12s ease;
+  min-width: 130px;
+  padding: 14px;
+}
+.match-word {
+  font-family: var(--ug-font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.match-emoji {
+  font-size: 3rem;
+}
+.match-word:active,
+.match-emoji:active {
+  transform: translateY(3px);
+}
+.match-word.selected {
+  background: #ffe39a;
+  outline: 4px solid #ffb703;
+}
+.match-word.matched,
+.match-emoji.matched {
+  background: #d6f5df;
+  opacity: 0.65;
+  cursor: default;
+}
+.match-emoji.wrong {
+  animation: shake 0.4s ease;
+  background: #ffd5d5;
+}
+
+/* ---------- ئىنكاس ---------- */
+.feedback-good {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2faf63;
+  animation: pop 0.4s ease;
+}
+.feedback-try {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e07a5f;
+}
+
+/* ---------- مۇكاپات ---------- */
+.reward-title {
+  font-size: 2.6rem;
+  margin: 0;
+  color: #ff7a45;
+}
+.reward-sub {
+  font-family: var(--ug-font);
+  font-size: 1.7rem;
+  margin: 0;
+}
+.reward-stars {
+  display: flex;
+  gap: 12px;
+}
+.reward-star {
+  font-size: 3.4rem;
+  filter: grayscale(1) opacity(0.4);
+  transform: scale(0.8);
+}
+.reward-star.on {
+  filter: none;
+  animation: star-pop 0.5s ease both;
+}
+.reward-star.on:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.reward-star.on:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes star-pop {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.reward-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ---------- confetti ---------- */
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.confetti {
+  position: absolute;
+  top: -40px;
+  font-size: 1.6rem;
+  animation: fall 2.4s linear infinite;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:5199/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5199/src/main.jsx)",
+      "Bash(pkill -f \"vite --port 5199\")"
+    ]
+  }
+}
