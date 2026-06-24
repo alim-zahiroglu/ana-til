@@ -83,6 +83,56 @@ export const letters = [
       { text: 'گىلاس', emoji: '🍒' },
     ],
   },
+  {
+    id: 'e',
+    char: 'ئە',
+    name: 'ئە',
+    color: '#FF6B6B',
+    words: [
+      { text: 'ئەينەك', emoji: '👓' },
+      { text: 'ئەسەل', emoji: '🍯' },
+    ],
+  },
+  {
+    id: 'o',
+    char: 'ئو',
+    name: 'ئو',
+    color: '#48BEFF',
+    words: [
+      { text: 'ئوتتۇز', emoji: '🔢' },
+      { text: 'ئوقۇتقۇچى', emoji: '👩‍🏫' },
+    ],
+  },
+  {
+    id: 're',
+    char: 'ر',
+    name: 'رە',
+    color: '#F7A072',
+    words: [
+      { text: 'رەسىم', emoji: '🖼️' },
+      { text: 'رەڭ', emoji: '🎨' },
+    ],
+  },
+  {
+    id: 'sin',
+    char: 'س',
+    name: 'سىن',
+    color: '#A78BFA',
+    words: [
+      { text: 'سۇ', emoji: '💧' },
+      { text: 'سائەت', emoji: '⏰' },
+    ],
+  },
+  {
+    id: 'lam',
+    char: 'ل',
+    name: 'لام',
+    color: '#34D399',
+    words: [
+      { text: 'لالە', emoji: '🌹' },
+      { text: 'لامپا', emoji: '💡' },
+    ],
+  },
 ]
 
 // بارلىق سۆزلەرنى بىر تىزىمغا يىغىش (ماسلاشتۇرۇش/خاتا تاللاش ئۈچۈن لازىم بولىدۇ)
